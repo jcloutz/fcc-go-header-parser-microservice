@@ -9,7 +9,9 @@ build-my-project:
     - ls -al /builds/jcloutz
     - go get github.com/tools/godep
     - mkdir -p /go/src/gitlab.com/jcloutz
-    - cp -r /builds/jcloutz /go/src/gitlab.com/jcloutz/
+    - ls -al /go/src/gitlab.com/
+    - cp -r /builds/jcloutz/ /go/src/gitlab.com/jcloutz/
+    - ls -al /go/src/gitlab.com/jcloutz/
     - cd /go/src/gitlab.com/jcloutz/fcc-go-header-parser-microservice
     - godep restore
     - godep go build
@@ -19,7 +21,7 @@ test-my-project:
   script:
     - go get github.com/tools/godep
     - mkdir -p /go/src/gitlab.com/jcloutz
-    - cp -r /builds/jcloutz /go/src/gitlab.com/jcloutz/
+    - cp -r /builds/jcloutz/ /go/src/gitlab.com/jcloutz/
     - cd /go/src/github.com/jcloutz/fcc-go-header-parser-microservice
     - godep restore
     - godep go test -v -cover ./...
