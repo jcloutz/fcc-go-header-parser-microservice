@@ -18,7 +18,6 @@ func TestIndexHandler(t *testing.T) {
 	req, _ := http.NewRequest("Get", server.URL, nil)
 	req.Header.Set("Accept-Language", "en-US,en;q=0.8")
 	res, err := http.DefaultClient.Do(req)
-	http.Client
 	// res, err := http.Get(server.URL)
 	if err != nil {
 		t.Fatal("Should be able to get response.")
