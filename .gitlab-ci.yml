@@ -6,6 +6,7 @@ build-my-project:
   image: golang:1.7
   stage: build
   script:
+    - ls -al /builds/jcloutz
     - go get github.com/tools/godep
     - mkdir -p /go/src/gitlab.com/jcloutz
     - cp -r /builds/jcloutz /go/src/gitlab.com/jcloutz/
