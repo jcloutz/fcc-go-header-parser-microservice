@@ -27,8 +27,8 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		language = ""
 	}
-
-	headerResponse := HeaderResponse{&r.RemoteAddr, &userAgent, &language}
+	ip := strings.Split(r.RemoteAddr, ":")[0]
+	headerResponse := HeaderResponse{&ip, &userAgent, &language}
 	json.NewEncoder(w).Encode(headerResponse)
 }
 
